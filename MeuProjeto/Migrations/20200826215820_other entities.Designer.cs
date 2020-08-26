@@ -3,14 +3,16 @@ using System;
 using MeuProjeto.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MeuProjeto.Migrations
 {
     [DbContext(typeof(MeuProjetoContext))]
-    partial class MeuProjetoContextModelSnapshot : ModelSnapshot
+    [Migration("20200826215820_other entities")]
+    partial class otherentities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

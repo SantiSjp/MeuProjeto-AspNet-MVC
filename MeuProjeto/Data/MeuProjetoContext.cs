@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using MeuProjeto.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace MeuProjeto.Data
 {
@@ -15,5 +10,7 @@ namespace MeuProjeto.Data
         }
 
         public DbSet<MeuProjeto.Models.Department> Department { get; set; }
+        public DbSet<MeuProjeto.Models.Seller> Seller { get; set; }
+        public DbSet<MeuProjeto.Models.SalesRecord> SalesRecord { get; set; }
     }
 }
