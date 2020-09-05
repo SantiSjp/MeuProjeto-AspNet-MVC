@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using MeuProjeto.Data;
+using MeuProjeto.Services;
 
 namespace MeuProjeto
 {
@@ -33,14 +36,23 @@ namespace MeuProjeto
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<MeuProjetoContext>(options =>
+            options.UseMySql(Configuration.GetConnectionString("MeuProjetoContext"), builder =>
+            builder.MigrationsAssembly("MeuProjeto")));
+
+            services.AddScoped<SeedingService>();
+
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
