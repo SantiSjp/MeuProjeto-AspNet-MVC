@@ -1,8 +1,10 @@
 ﻿using MeuProjeto.Models;
 using MeuProjeto.Models.ViewModels;
 using MeuProjeto.Services;
+using MeuProjeto.Services.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections.Generic;
 
 namespace MeuProjeto.Controllers
 {
@@ -87,5 +89,55 @@ namespace MeuProjeto.Controllers
 
             return View(obj);
         }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            // Id.value porque id é opcional "int?"
+            var obj = _sellerService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            List<Department> departments = _departmentService.FindAll();
+            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = obj,Departments = departments };
+
+            return View(viewModel);
+        }
+
+        // Informa método Post
+        [HttpPost]
+        // Previne ataque CSRF
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Seller seller)
+        {
+
+            if (id != seller.Id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                _sellerService.Update(seller);
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+            catch (DbConcurrencyException)
+            {
+                return BadRequest();
+            }
+           
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }
