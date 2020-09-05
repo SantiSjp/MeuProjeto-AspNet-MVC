@@ -1,4 +1,5 @@
-﻿using MeuProjeto.Services;
+﻿using MeuProjeto.Models;
+using MeuProjeto.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -20,6 +21,21 @@ namespace MeuProjeto.Controllers
             var list = _sellerService.FindAll();
 
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // Informa método Post
+        [HttpPost]
+        // Previne ataque CSRF
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
