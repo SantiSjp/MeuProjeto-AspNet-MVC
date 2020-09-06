@@ -43,23 +43,23 @@ namespace MeuProjeto.Data
 
 
             SalesRecord R1 = new SalesRecord(1, new DateTime(2020, 09, 04), 250.00, SaleStatus.Billed, S1);
-            SalesRecord R2 = new SalesRecord(2, new DateTime(2020, 08, 10), 250.00, SaleStatus.Billed, S2);
-            SalesRecord R3 = new SalesRecord(3, new DateTime(2020, 07, 11), 250.00, SaleStatus.Billed, S3);
-            SalesRecord R4 = new SalesRecord(4, new DateTime(2020, 01, 04), 250.00, SaleStatus.Billed, S4);
-            SalesRecord R5 = new SalesRecord(5, new DateTime(2020, 02, 05), 250.00, SaleStatus.Billed, S5);
-            SalesRecord R6 = new SalesRecord(6, new DateTime(2020, 01, 09), 250.00, SaleStatus.Billed, S6);
-            SalesRecord R7 = new SalesRecord(7, new DateTime(2020, 04, 20), 250.00, SaleStatus.Billed, S7);
-            SalesRecord R8 = new SalesRecord(8, new DateTime(2020, 07, 22), 250.00, SaleStatus.Billed, S8);
-            SalesRecord R9 = new SalesRecord(9, new DateTime(2020, 08, 15), 250.00, SaleStatus.Billed, S9);
-            SalesRecord R10 = new SalesRecord(10, new DateTime(2020, 06, 10), 250.00, SaleStatus.Billed, S10);
-            SalesRecord R11 = new SalesRecord(11, new DateTime(2020, 11, 17), 250.00, SaleStatus.Billed, S10);
-            SalesRecord R12 = new SalesRecord(12, new DateTime(2020, 10, 13), 250.00, SaleStatus.Billed, S1);
-            SalesRecord R13 = new SalesRecord(13, new DateTime(2020, 11, 28), 250.00, SaleStatus.Billed, S2);
-            SalesRecord R14 = new SalesRecord(14, new DateTime(2020, 04, 24), 250.00, SaleStatus.Billed, S3);
-            SalesRecord R15 = new SalesRecord(15, new DateTime(2020, 07, 20), 250.00, SaleStatus.Billed, S6);
-            SalesRecord R16 = new SalesRecord(16, new DateTime(2020, 12, 22), 250.00, SaleStatus.Billed, S4);
-            SalesRecord R17 = new SalesRecord(17, new DateTime(2020, 11, 21), 250.00, SaleStatus.Billed, S8);
-            SalesRecord R18 = new SalesRecord(18, new DateTime(2020, 10, 30), 250.00, SaleStatus.Billed, S2);
+            SalesRecord R2 = new SalesRecord(2, new DateTime(2020, 08, 10), 112.00, SaleStatus.Billed, S2);
+            SalesRecord R3 = new SalesRecord(3, new DateTime(2020, 07, 11), 320.00, SaleStatus.Billed, S3);
+            SalesRecord R4 = new SalesRecord(4, new DateTime(2020, 01, 04), 2250.00, SaleStatus.Billed, S4);
+            SalesRecord R5 = new SalesRecord(5, new DateTime(2020, 02, 05), 2220.00, SaleStatus.Billed, S5);
+            SalesRecord R6 = new SalesRecord(6, new DateTime(2020, 01, 09), 1230.00, SaleStatus.Billed, S6);
+            SalesRecord R7 = new SalesRecord(7, new DateTime(2020, 04, 20), 2322.00, SaleStatus.Billed, S7);
+            SalesRecord R8 = new SalesRecord(8, new DateTime(2020, 07, 22), 1111.00, SaleStatus.Billed, S8);
+            SalesRecord R9 = new SalesRecord(9, new DateTime(2020, 08, 15), 2431.00, SaleStatus.Billed, S9);
+            SalesRecord R10 = new SalesRecord(10, new DateTime(2020, 06, 10), 123.00, SaleStatus.Billed, S10);
+            SalesRecord R11 = new SalesRecord(11, new DateTime(2020, 11, 17), 2521.00, SaleStatus.Billed, S10);
+            SalesRecord R12 = new SalesRecord(12, new DateTime(2020, 10, 13), 1321.00, SaleStatus.Billed, S1);
+            SalesRecord R13 = new SalesRecord(13, new DateTime(2020, 11, 28), 1231.00, SaleStatus.Billed, S2);
+            SalesRecord R14 = new SalesRecord(14, new DateTime(2020, 04, 24), 1210.00, SaleStatus.Billed, S3);
+            SalesRecord R15 = new SalesRecord(15, new DateTime(2020, 07, 20), 2312.00, SaleStatus.Billed, S6);
+            SalesRecord R16 = new SalesRecord(16, new DateTime(2020, 12, 22), 1675.00, SaleStatus.Billed, S4);
+            SalesRecord R17 = new SalesRecord(17, new DateTime(2020, 11, 21), 1932.00, SaleStatus.Billed, S8);
+            SalesRecord R18 = new SalesRecord(18, new DateTime(2020, 10, 30), 1942.00, SaleStatus.Billed, S2);
 
             _context.Department.AddRange(D1, D2, D3, D4);
 
